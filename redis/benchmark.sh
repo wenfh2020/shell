@@ -1,16 +1,23 @@
 #!/bin/bash
+# -------------------------------------------------------------------------------
+# project  redis-benchmark
+# file:    benchmark.sh
+# brief    Stress test redis multi-threaded processing network i/o
+# author:  wenfh2020.com
+# date:    2020-04-21
+# -------------------------------------------------------------------------------
 
 cd `dirname $0`
 work_path=`pwd`
 cd $work_path
 
+# new config file for redis-server
 cf_file='redis.conf'
 cf_threads_file='redis.conf.ths'
 cf_un_threads_file='redis.conf.unths'
 
 packs='10 500 1000 5000 10000 50000'
 clients='10 50 100 200 500 1000 1500'
-
 persistent_file='dump.rdb'
 
 close_target() {

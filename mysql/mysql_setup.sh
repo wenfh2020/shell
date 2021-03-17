@@ -15,7 +15,7 @@ Swap=$(free -m | awk '/Swap:/{print $2}')
 #http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.22.tar.gz
 
 Install_MySQL-5-6() {
-    yum -y install make gcc-c++ cmake bison-devel ncurses-devel
+    yum -y install make gcc-c++ cmake bison-devel ncurses-devel autoconf
 
     if [ ! -f ${SETUP_FILE_NAME} ]; then
         wget http://dev.mysql.com/get/Downloads/MySQL-5.6/${SETUP_FILE_NAME}
